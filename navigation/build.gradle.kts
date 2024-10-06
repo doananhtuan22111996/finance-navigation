@@ -51,7 +51,7 @@ publishing {
             }
             groupId = "vn.finance.libs" // Replace with your GitHub username
             artifactId = "navigation"
-            version = "1.0.1" // Set your desired version here
+            version = "1.0.2" // Set your desired version here
         }
     }
 }
