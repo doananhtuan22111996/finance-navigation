@@ -1,8 +1,8 @@
 package vn.finance.navigation
 
-sealed class NavigationKey(private val key: String) {
+sealed class NavigationKey {
 
-    data object Onboarding : NavigationKey(key = "onboarding")
-    data object Authentication : NavigationKey(key = "authentication")
-    data object Home : NavigationKey(key = "home")
+    data class Onboarding(val key: String = "onboarding") : NavigationKey()
+    data class Authentication(val key: String = "authentication") : NavigationKey()
+    data class Home(val key: String = "home") : NavigationKey()
 }
