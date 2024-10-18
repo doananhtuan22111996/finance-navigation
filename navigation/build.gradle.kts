@@ -29,11 +29,18 @@ android {
     kotlinOptions {
         jvmTarget = Configs.jvmTarget
     }
+    publishing {
+        multipleVariants("all") {
+            allVariants()
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 publishing {
-    val ghUsername = System.getenv("USERNAME")
-    val ghPassword = System.getenv("TOKEN")
+    val ghUsername = System.getenv("GH_USERNAME")
+    val ghPassword = System.getenv("GH_TOKEN")
     repositories {
         maven {
             name = "GitHubPackages"
@@ -45,9 +52,9 @@ publishing {
         }
     }
     publications {
-        create<MavenPublication>("mavenJava") {
+        create<MavenPublication>("mavenAndroid") {
             afterEvaluate {
-                from(components["release"])
+                from(components["all"])
             }
             groupId = "vn.finance.libs" // Replace with your GitHub username
             artifactId = "navigation"
