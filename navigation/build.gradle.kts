@@ -1,8 +1,8 @@
 plugins {
-    alias(mobilex.plugins.androidLibrary)
-    alias(mobilex.plugins.kotlinAndroid)
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
     id("kotlin-kapt")
-    alias(mobilex.plugins.androidHilt)
+    alias(libs.plugins.androidHilt)
     `maven-publish`
 }
 
@@ -56,20 +56,19 @@ publishing {
             afterEvaluate {
                 from(components["all"])
             }
-            groupId = "vn.finance.libs" // Replace with your GitHub username
-            artifactId = "navigation"
-            version = "1.0.0" // Set your desired version here
+            groupId = Configs.Artifact.groupId // Replace with your GitHub username
+            artifactId = Configs.Artifact.artifactId
+            version = Configs.Artifact.version // Set your desired version here
         }
     }
 }
 
 dependencies {
-    implementation(mobilex.bundles.coreAndroidComponents)
-    implementation(mobilex.androidxHilt)
-    kapt(mobilex.androidxHiltCompiler)
-
-    testImplementation(mobilex.bundles.testComponents)
-    androidTestImplementation(mobilex.bundles.androidTestComponents)
+    implementation(libs.bundles.coreAndroidComponents)
+    implementation(libs.androidxHilt)
+    kapt(libs.androidxHiltCompiler)
+    testImplementation(libs.bundles.testComponents)
+    androidTestImplementation(libs.bundles.androidTestComponents)
 }
 
 // Allow references to generated code

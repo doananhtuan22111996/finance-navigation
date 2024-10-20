@@ -29,7 +29,7 @@ dependencyResolutionManagement {
         }
     }
     versionCatalogs {
-        create("mobilex") {
+        create("libs") {
             from("vn.core.libx:versions:1.0.3")
         }
     }
