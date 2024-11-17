@@ -1,16 +1,11 @@
-import org.gradle.api.JavaVersion
+package vn.finance.buildSrc
 
 object Configs {
     const val namespace = "vn.finance.navigation"
-    const val minSdk = 24
-    const val compileSdk = 34
-    val jvmTarget = JavaVersion.VERSION_21.toString()
-    val javaVersion = JavaVersion.VERSION_21
-    const val mavenDomain = "https://maven.pkg.github.com"
 
     object Artifact {
-        const val groupId = "vn.finance.libs"
-        const val artifactId = "navigation"
-        const val version = "1.0.1"
+        const val GROUP_ID = "vn.finance.libs"
+        const val ARTIFACT_ID = "navigation"
+        const val VERSION = "1.0.2"
     }
 }
